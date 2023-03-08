@@ -1,0 +1,13 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: apache
+  author: Mohamed Salah
+  description: Apache for Linux (Redhat & Debian).
+  galaxy_tags:
+    - web
+    - httpd
+    - apache
+    - webserver
+    - html
