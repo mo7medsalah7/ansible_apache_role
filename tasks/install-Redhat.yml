@@ -15,12 +15,8 @@
     port: "{{ http_port }}"
     permanent: yes
     state: enabled
-
-- name: Reload firewalld
-  systemd:
-    name: firewalld
-    state: " {{service_reload_state}} "
-
+  notify:
+    - reload service firewalld
 - name: copy index.html file to the remote hosts
   copy:
     src: "{{ html_page_src }}"

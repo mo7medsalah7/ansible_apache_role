@@ -3,3 +3,8 @@
   service:
     name: "{{ apache_service_name }}"
     state: "{{ service_restart_state }}"
+
+- name: reload service firewalld
+  systemd:
+    name: firewalld
+    state: " {{service_reload_state  }} "
