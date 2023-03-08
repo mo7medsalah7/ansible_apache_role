@@ -1,0 +1,9 @@
+apache_port: 80/tcp
+
+html_page_src: index.html
+html_page_dest: /var/www/html/index.html
+
+service_start_state: started
+
+service_restart_state: restarted
+service_reload_state: reloaded

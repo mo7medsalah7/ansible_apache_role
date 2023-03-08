@@ -1,0 +1,27 @@
+---
+- name: install package
+  yum:
+    name: "{{ apache_service_name }}"
+    state: installed
+
+- name: start and enable httpd
+  systemd:
+    name: "{{ apache_service_name }}"
+    state: "{{service_start_state}}"
+    enabled: yes
+
+- name: Allow traffic in default zone for https service
+  firewalld:
+    port: "{{ http_port }}"
+    permanent: yes
+    state: enabled
+
+- name: Reload firewalld
+  systemd:
+    name: firewalld
+    state: " {{service_reload_state}} "
+
+- name: copy index.html file to the remote hosts
+  copy:
+    src: "{{ html_page_src }}"
+    dest: "{{ html_page_dest }}"

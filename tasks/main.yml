@@ -1,0 +1,9 @@
+---
+# Include variables For specified os_family.
+- name: Include OS-specific(Redhat, Debian, Solaris, etc) variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# Setup/install tasks.
+# This includes specific task for specific os_family
+- include_tasks: "install-{{ ansible_os_family }}.yml"
+
