@@ -28,4 +28,4 @@
   copy:
     src: "{{ html_page_src }}"
     dest: "{{ html_page_dest }}"
-
+    remote_src: true
