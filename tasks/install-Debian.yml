@@ -12,18 +12,7 @@
     name: "{{ apache_service_name }}"
     state: "{{service_start_state}}"
     enabled: yes
-- name: permit traffic in default zone
-  ansible.posix.firewalld:
-    port: "{{ http_port }}"
-    permanent: yes
-    state: enabled
-  notify:
-  - reload service firewalld
 
-- name: Reload firewalld
-  systemd:
-    name: firewalld
-    state: " {{service_reload_state}} "
 
 - name: copy index.html file to the remote hosts
   copy:

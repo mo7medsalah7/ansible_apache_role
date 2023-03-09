@@ -10,13 +10,7 @@
     state: "{{service_start_state}}"
     enabled: yes
 
-- name: permit traffic in default zone
-  ansible.posix.firewalld:
-    port: "{{ http_port }}"
-    permanent: yes
-    state: enabled
 - name: copy index.html file to the remote hosts
   copy:
     src: "../{{ html_page_src }}"
     dest: "{{ html_page_dest }}"
-    remote_src: true
