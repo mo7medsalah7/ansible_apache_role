@@ -10,8 +10,8 @@
     state: "{{service_start_state}}"
     enabled: yes
 
-- name: permit traffic in default zone for https service
-  firewalld:
+- name: permit traffic in default zone
+  ansible.posix.firewalld:
     port: "{{ http_port }}"
     permanent: yes
     state: enabled
