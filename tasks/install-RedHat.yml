@@ -15,8 +15,6 @@
     port: "{{ http_port }}"
     permanent: yes
     state: enabled
-  notify:
-  - reload service firewalld
 - name: copy index.html file to the remote hosts
   copy:
     src: "../{{ html_page_src }}"
