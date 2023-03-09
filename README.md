@@ -7,11 +7,11 @@ An Ansible Role that installs Apache on RHEL/CentOS, Debian/Ubuntu.
 Default values for variables are listed in (`defaults/main.yml`).
 Here is a list of available variables.
 
-###[for RHEL/CentOS]
+[**for RHEL/CentOS**]
    
   `apache_service_name: httpd`
 
-###[for Debian]
+[**for Debian**]
    
    `apache_service_name: apache2`
 
